@@ -61,6 +61,7 @@ The following table lists the configurable parameters of the MongoDB chart and t
 | `mongodbPassword`                                  | MongoDB custom user password                                                                 | `random alphanumeric string (10)`                       |
 | `mongodbDatabase`                                  | Database to create                                                                           | `nil`                                                   |
 | `mongodbEnableIPv6`                                | Switch to enable/disable IPv6 on MongoDB                                                     | `true`                                                  |
+| `mongodbDirectoryPerDB`                            | Switch to enable/disable DirectoryPerDB on MongoDB                                           | `false`                                                 |
 | `mongodbSystemLogVerbosity`                        | MongoDB systen log verbosity level                                                           | `0`                                                     |
 | `mongodbDisableSystemLog`                          | Whether to disable MongoDB system log or not                                                 | `false`                                                 |
 | `mongodbExtraFlags`                                | MongoDB additional command line flags                                                        | []                                                      |
@@ -94,7 +95,8 @@ The following table lists the configurable parameters of the MongoDB chart and t
 | `persistence.accessMode`                           | Use volume as ReadOnly or ReadWrite                                                          | `ReadWriteOnce`                                         |
 | `persistence.size`                                 | Size of data volume                                                                          | `8Gi`                                                   |
 | `persistence.annotations`                          | Persistent Volume annotations                                                                | `{}`                                                    |
-| `persistence.existingClaim`                        | Name of an existing PVC to use (avoids creating one if this is given)                        | `nil`                                                   |
+| `persistence.existingClaim`                        | Name of an existing PVC to use (avoids creating one if this is given)                       | `nil`                                                   |
+| `extraInitContainers`                     | Additional init containers as a string to be passed to the `tpl` function                          | `{}`   |                                                |
 | `livenessProbe.enabled`                            | Enable/disable the Liveness probe                                                            | `true`                                                  |
 | `livenessProbe.initialDelaySeconds`                | Delay before liveness probe is initiated                                                     | `30`                                                    |
 | `livenessProbe.periodSeconds`                      | How often to perform the probe                                                               | `10`                                                    |
