@@ -94,7 +94,6 @@ Parameter | Description | Default
 --------- | ----------- | -------
 `alertmanager.enabled` | If true, create alertmanager | `true`
 `alertmanager.name` | alertmanager container name | `alertmanager`
-`alertmanager.namespaces` | The namespace where prometheus-server will perform service discovery for alertmanagers | `{}`
 `alertmanager.image.repository` | alertmanager container image repository | `prom/alertmanager`
 `alertmanager.image.tag` | alertmanager container image tag | `v0.15.3`
 `alertmanager.image.pullPolicy` | alertmanager container image pull policy | `IfNotPresent`
@@ -305,6 +304,7 @@ Parameter | Description | Default
 `server.terminationGracePeriodSeconds` | Prometheus server Pod termination grace period | `300`
 `server.retention` | (optional) Prometheus data retention | `""`
 `serverFiles.alerts` | Prometheus server alerts configuration | `{}`
+`serverFiles.alerting.alertmanagerNamespaces` | Kubernetes namespaces where server will discover alertmanager pods. The default is all (i.e. cluster-wide). | `[]`
 `serverFiles.rules` | Prometheus server rules configuration | `{}`
 `serverFiles.prometheus.yml` | Prometheus server scrape configuration | example configuration
 `extraScrapeConfigs` | Prometheus server additional scrape configuration | ""
